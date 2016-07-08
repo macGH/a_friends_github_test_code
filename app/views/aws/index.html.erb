@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Aws</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>File</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aws.each do |aw| %>
+      <tr>
+        <td><a href="<%= aw.uploaded_file %>"><%= aw.uploaded_file %></a></td>
+        <td><%= link_to 'Show', aw %></td>
+        <td><%= link_to 'Edit', edit_aw_path(aw) %></td>
+        <td><%= link_to 'Destroy', aw, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aw', new_aw_path %>

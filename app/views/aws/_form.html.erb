@@ -1,0 +1,22 @@
+<%= form_for(@aw) do |f| %>
+  <% if @aw.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@aw.errors.count, "error") %> prohibited this aw from being saved:</h2>
+
+      <ul>
+      <% @aw.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :uploaded_file %><br>
+
+    <%= f.file_field :uploaded_file %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
